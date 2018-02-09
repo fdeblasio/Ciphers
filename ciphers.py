@@ -46,12 +46,12 @@ def substitution(ciphertext):
         print
 
 if __name__== "__main__":
-    while True:
-        cipher = raw_input("Would you like to crack a Caesar cipher or just a generic substitution cipher? ").strip()
-        if cipher == "caesar" or cipher == "substitution":
-            break
-        else:
-            print "Please choose a Caesar or substitution cipher."
-            print
     ciphertext = raw_input("What is the ciphertext that you would like to decipher? ").upper()
-    eval(cipher + "(\"" + ciphertext + "\")")
+    while True:
+        cipher = raw_input("What kind of cipher is it? ").strip()
+        try:
+            eval(cipher + "(\"" + ciphertext + "\")")
+            break
+        except:
+            print "Please choose a valid cipher (Caesar or substitution)."
+            print
